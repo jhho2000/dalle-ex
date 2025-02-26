@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DALL·E Image Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+            width: 90%;
+            max-width: 1200px;
+        }
+        .prompt-section, .image-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .prompt-section h1, .image-section h2 {
+            margin-bottom: 10px;
+        }
+        #prompt {
+            width: 100%;
+            height: 100px;
+            font-size: 16px;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        #imageForm {
+            display: flex;
+            flex-direction: column;
+        }
+        #generatedImage {
+            max-width: 100%;
+            height: auto;
+            display: none;
+        }
+        input[type="submit"] {
+            font-size: 16px;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left section for prompt input -->
+        <div class="prompt-section">
+            <h1>Generate AI Image using DALL·E</h1>
+            <form id="imageForm">
+                <label for="prompt">Enter your prompt:</label>
+                <textarea id="prompt" name="prompt" required></textarea>
+                <input type="submit" value="Generate Image">
+            </form>
+        </div>
+        
+        <!-- Right section for displaying generated image -->
+        <div class="image-section">
+            <h2>Generated Image:</h2>
+            <img id="generatedImage" alt="AI Generated Image">
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
